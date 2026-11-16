@@ -1,0 +1,11 @@
+﻿Tecnologia;Teste;Entrada;Resultado esperado;Resultado observado;Status
+MySQL;Capacidade negativa;capacity = -5;Rejeitar;Rejeitado pelo tipo UNSIGNED;OK
+MySQL;Referência inexistente;venue_id = 999999;Rejeitar;Rejeitado pela chave estrangeira;OK
+MySQL;Código de ingresso duplicado;TC-TICKET-0001;Rejeitar;Rejeitado por índice único;OK
+MySQL;Estado inválido de ingresso;status = invalid_state;Rejeitar;Rejeitado pelo ENUM;OK
+MongoDB;Estado inválido de ingresso;status = invalid_state;Rejeitar;Rejeitado pelo validador;OK
+MongoDB;Quantidade negativa em pedido;quantity = -2;Rejeitar;Rejeitado pelo validador;OK
+MongoDB;Código de ingresso duplicado;ticket_code repetido;Rejeitar;Índice único existente;OK
+MongoDB;Chave de idempotência duplicada;idempotency_key repetida;Rejeitar;Índice único existente;OK
+MySQL;Dados válidos existentes;Registros atuais;Aceitar;Registros encontrados;VERIFICADO
+MongoDB;Dados válidos existentes;Documentos atuais;Aceitar;Documentos encontrados;VERIFICADO
