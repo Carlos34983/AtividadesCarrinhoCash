@@ -1,20 +1,17 @@
 <?php
-
 namespace Database\Factories;
-
 use App\Models\Product;
 use Illuminate\Database\Eloquent\Factories\Factory;
-
 /**
- * @extends Factory<Product>
- */
+* @extends Factory<Product>
+*/
 class ProductFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
+ /**
+ * Define the model's default state.
+ *
+ * @return array<string, mixed>
+ */
     public function definition(): array
     {
         return [
@@ -23,6 +20,18 @@ class ProductFactory extends Factory
             'image' => fake()->imageUrl(),
             'stock' => fake()->randomNumber(2),
             'price' => fake()->randomDigitNotZero() * fake()->randomNumber(2),
+            'attributes' => [
+                'colors' => [
+                    fake()->colorName(),
+                    fake()->colorName(),
+                    fake()->colorName(),
+                    fake()->colorName(),
+                    fake()->colorName(),
+                ],
+
+                'sizes' => ['P', 'M', 'G'],
+            ]
         ];
     }
 }
+

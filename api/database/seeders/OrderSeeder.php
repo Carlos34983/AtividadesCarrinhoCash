@@ -16,3 +16,4 @@ class OrderSeeder extends Seeder
         Order::factory(10)->create();
     }
 }
+
